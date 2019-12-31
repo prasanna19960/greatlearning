@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <script>
+ $(document).ready(function(){
+ $('#submit').on("click", function(){
+ var fname=$('#firstname').val();
+ var lname=$('#lastname').val();
+ var company=$('#company').val();
+ var title=$('#title').val();
+ var mobnum=$('#mobilenumber').val();
+ var busphone=$('#bussinessphone').val();
+ var email=$('#email').val();
+ var country=$('#country').val();
+$('.error').text("");
+ });
+ });
+ function validate(){
+ 
+ var fname=$('#firstname').val();
+ if (fname.length==0){
+ $('#errfn').text('Enter the First Name');
+ return false;
+ }
+ else
+ {
+ $('#errfn').text('');
+ }
+ 
+ var lname=$('#lastname').val();
+ if (lname.length==0){
+ $('#errln').text('Enter the Last Name');
+ return false;
+ }
+ else{
+ $('#errln').text('');
+ }
+ 
+ var company=$('#company').val();
+ if (company.length==0){
+ $('#errcmp').text('Enter the Company Name');
+ return false;
+ }
+ else{
+ $('#errcmp').text('');
+ }
+ 
+ var title=$('#title').val();
+ if (title.length==0){
+ $('#errtle').text('Enter the Title');
+ return false;
+ }
+ else{
+ $('#errtle').text('');
+ }
+ 
+ var mobnum=$('#mobilenumber').val();
+ if (mobnum.length==0){
+ $('#errmob').text('Enter the Mobile Number');
+ return false;
+ }
+ else{
+ $('#errmob').text('');
+ }
+ 
+ var busphone=$('#bussinessphone').val();
+ if (busphone.length==0){
+ $('#errbus').text('Enter the Phone Number');
+ return false;
+ }
+ else{
+ $('#errbus').text('');
+ }
+ 
+ var email=$('#email').val();
+ if (email.length==0){
+ $('#erremail').text('Enter the Email Address');
+ return false;
+ }
+ else{
+ $('#erremail').text('');
+ }
+ 
+ var country=$('#country').val();
+ if (country.length==0){
+ $('#errcty').text('Select the Country');
+ return false;
+ }
+ else{
+ $('#errcty').text('');
+ }
+ 
+ }
+ </script>
+<style>
+.container{
+width: 600px;
+margin: 0 auto;
+height: auto;
+background-color: #eeeeee;
+padding-top:30px;
+padding-bottom:30px;
+}
+input , select{
+width: 400px;
+display: block;
+margin: 15px auto;
+padding-top:10px;
+padding-bottom:10px;
+height:auto;
+}
+.error{
+width: 400px;
+display: block;
+text-align: center;
+color: red;
+font-family: Arial;
+font-size: 12px;
+height: auto;
+margin:0 auto;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h2 align="center">Fill the form to register</h2>
+<form method="POST" action="">
+<input onblur="validate()" name="firstname" id="firstname" placeholder="First Name" type="text">
+<div class="error" id="errfn"></div>
+<input onblur="validate()" name="lastname" id="lastname" placeholder="Last Name" type="text">
+<div class="error" id="errln"></div>
+<input onblur="validate()" name="company" id="company" placeholder="Company" type="text">
+<div class="error" id="errcmp"></div>
+<input onblur="validate()" name="title" id="title" placeholder="Title" type="text">
+<div class="error" id="errtle"></div>
+<input onblur="validate()" name="mobilenumber" id="mobilenumber" placeholder="Mobile Number" type="text">
+<div class="error" id="errmob"></div>
+<input onblur="validate()" name="bussinessphone" id="bussinessphone" placeholder="Phone Number" type="text">
+<div class="error" id="errbus"></div>
+<input onblur="validate()" name="email" id="email" placeholder="Email Address" type="email">
+<div class="error" id="erremail"></div>
+<select onblur="validate()" name="country" id="country" type="select">
+<option value="">Select the Country</option>
+<option value="">India</option>
+<option value="">Singapore</option>
+<option value="">Malaysia</option>
+<option value="">Thailand</option>
+</select>
+<div class="error" id="errcty"></div>
+<input id="submit" type="submit">
+</form>
+</div>
+</body>
+</html>
